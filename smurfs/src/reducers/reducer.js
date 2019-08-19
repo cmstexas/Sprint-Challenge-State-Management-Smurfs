@@ -2,7 +2,8 @@
 import { 
     FETCHING_SMURF_DATA_START, 
     FETCHING_SMURF_DATA_SUCCESS, 
-    FETCHING_SMURF_DATA_FAILURE 
+    FETCHING_SMURF_DATA_FAILURE,
+    ADD_SMURF_DATA_SUCCESS 
 } from '../actions/SmurfActions';
 
 export const initialState = {
@@ -19,6 +20,14 @@ export const reducer = (state = initialState, action) => {
                 isLoading: true, 
                 error: ''
             };
+        case ADD_SMURF_DATA_SUCCESS:
+                return {
+                    ...state, 
+                    smurfs: action.payload, 
+                    addingSmurf: false,
+                    isLoading: true, 
+                    error: ''
+                };
         case FETCHING_SMURF_DATA_SUCCESS:
             return {
                 ...state, 

@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
+// import { addData } from '../actions/SmurfActions';
+
 
 const SmurfForm = ({ addSmurf }) => {   //to do form can remain dumb and use useState; it just needs the prop "addTodo"
   const [item, setItem] = useState("");
 
   const handleChange = event => setItem(event.target.value);
+
   const handleSubmit = event => {
     event.preventDefault();
     addSmurf(item);
@@ -15,7 +18,7 @@ const SmurfForm = ({ addSmurf }) => {   //to do form can remain dumb and use use
       <input type="text"
              name="item" 
              placeholder="Add Smurf's Name" 
-             value={item}
+             value={item.name}
              onChange={handleChange} />
       <input type="text"
              name="age" 
@@ -27,7 +30,7 @@ const SmurfForm = ({ addSmurf }) => {   //to do form can remain dumb and use use
              placeholder="Add Smurf's Height" 
              value={item.height}
              onChange={handleChange} />
-      <button type="submit">Add a New Smurf</button>
+      <button onClick={addSmurf} type="submit">Add a New Smurf</button>
     </form>
   )
 };

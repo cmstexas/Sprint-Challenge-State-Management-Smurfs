@@ -4,7 +4,7 @@ import './App.css';
 
 const SmurfCard = props => {
     return (
-    <div clasName = "smurfcard">
+    <div className = "smurfcard">
         <h1>{props.name}</h1>
         <h6>AGE</h6>
         <h4>{props.age}</h4>
